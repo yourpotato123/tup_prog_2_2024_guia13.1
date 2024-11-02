@@ -1,0 +1,10 @@
+D:\Microsoft Visual Studio\Repositorios C#\Programación 2\Guia 13\Guia 13\Guia 13\bin\Debug\Guia 13.exe.config
+D:\Microsoft Visual Studio\Repositorios C#\Programación 2\Guia 13\Guia 13\Guia 13\bin\Debug\Guia 13.exe
+D:\Microsoft Visual Studio\Repositorios C#\Programación 2\Guia 13\Guia 13\Guia 13\bin\Debug\Guia 13.pdb
+D:\Microsoft Visual Studio\Repositorios C#\Programación 2\Guia 13\Guia 13\Guia 13\obj\Debug\Guia 13.csproj.AssemblyReference.cache
+D:\Microsoft Visual Studio\Repositorios C#\Programación 2\Guia 13\Guia 13\Guia 13\obj\Debug\Guia_13.Form1.resources
+D:\Microsoft Visual Studio\Repositorios C#\Programación 2\Guia 13\Guia 13\Guia 13\obj\Debug\Guia_13.Properties.Resources.resources
+D:\Microsoft Visual Studio\Repositorios C#\Programación 2\Guia 13\Guia 13\Guia 13\obj\Debug\Guia 13.csproj.GenerateResource.cache
+D:\Microsoft Visual Studio\Repositorios C#\Programación 2\Guia 13\Guia 13\Guia 13\obj\Debug\Guia 13.csproj.CoreCompileInputs.cache
+D:\Microsoft Visual Studio\Repositorios C#\Programación 2\Guia 13\Guia 13\Guia 13\obj\Debug\Guia 13.exe
+D:\Microsoft Visual Studio\Repositorios C#\Programación 2\Guia 13\Guia 13\Guia 13\obj\Debug\Guia 13.pdb
