@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Guia_13
 {
+    [Serializable]
     internal class Cliente : Ticket
     {
         public long DNI { get;private set; }
@@ -22,7 +23,7 @@ namespace Guia_13
         public override string ToString()
         {
             long d = DNI;
-            return base.ToString() + $"- Cliente {d}";
+            return base.ToString() + $"Cliente {d}";
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Guia_13
 {
+    [Serializable]
     internal class Vehiculo:IComparable<Vehiculo>
     {
         string nroPatente { get; }

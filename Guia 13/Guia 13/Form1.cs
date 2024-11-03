@@ -14,9 +14,9 @@ namespace Guia_13
     public partial class Form1 : Form
     {
         Agencia a = new Agencia();
-        //FileStream archivo;
-        //StreamReader lector;
-        //StreamWriter escritor;
+        FileStream archivo;
+        StreamReader lector;
+        StreamWriter escritor;
 
         public Form1()
         {
@@ -72,13 +72,15 @@ namespace Guia_13
         }
         private void btDenuncias_Click(object sender, EventArgs e)
         {
-            a.AtenderTicket(0);
+            Denuncia denuncia = ((Denuncia)a.AtenderTicket(0));
+            lbTurnos.Items.Remove(denuncia.ToString());
 
         }
 
         private void btCliente_Click(object sender, EventArgs e)
         {
-            a.AtenderTicket(1);
+            Cliente cliente = ((Cliente)a.AtenderTicket(1));
+            lbTurnos.Items.Remove(cliente.ToString());
         }
         private void btExportar_Click(object sender, EventArgs e)
         {

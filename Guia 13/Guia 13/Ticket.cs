@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Guia_13
 {
+    [Serializable]
     abstract class Ticket : IComparable<Ticket>
     {
         public int nroOrden { get; protected set; }
