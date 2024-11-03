@@ -14,9 +14,9 @@ namespace Guia_13
     public partial class Form1 : Form
     {
         Agencia a = new Agencia();
-        FileStream archivo;
-        StreamReader lector;
-        StreamWriter escritor;
+        //FileStream archivo;
+        //StreamReader lector;
+        //StreamWriter escritor;
 
         public Form1()
         {
@@ -47,7 +47,7 @@ namespace Guia_13
                     d = new Denuncia(v);
                     a.AgregarTicket(d);
 
-                    lbTurnos.Items.Add($"{d.ToString()} - {v.ToString()}");
+                    lbTurnos.Items.Add($"{d.ToString()}");
                 }
                 else 
                 {
@@ -57,7 +57,7 @@ namespace Guia_13
                     a.ListaVehiculo.Add(v);
                     a.AgregarTicket(d);
 
-                    lbTurnos.Items.Add($"{d.ToString()} - {v.ToString()}");
+                    lbTurnos.Items.Add($"{d.ToString()}");
                 }
 
 
@@ -66,6 +66,7 @@ namespace Guia_13
             {
 
                 a.AgregarTicket(c);
+                lbTurnos.Items.Add($"{c.ToString()}");
 
             }
         }

@@ -13,9 +13,22 @@ namespace Guia_13
         public Queue<Denuncia> denuncia = new Queue<Denuncia>();
         public Queue<Cliente> nuevos = new Queue<Cliente>();
 
+       
         public int CantidadAtendido { get { return ListaAtendidos.Count(); } }
 
-        public Ticket this [int idx]
+        public Agencia()
+        {
+            Cliente c = new Cliente(39256894);
+            Vehiculo v = new Vehiculo("ABC123", c);
+            ListaVehiculo.Add(v);
+
+            c = new Cliente(38746582);
+            v = new Vehiculo("QWE789", c);
+            ListaVehiculo.Add(v);
+
+        }
+
+        public Ticket this[int idx]
         {
             get
             {
@@ -27,11 +40,11 @@ namespace Guia_13
 
         public void AgregarTicket(Ticket turno)
         {
-            if (turno!=null && turno is Cliente)
-            {nuevos.Enqueue((Cliente)turno);}
+            if (turno != null && turno is Cliente)
+            { nuevos.Enqueue((Cliente)turno); }
 
-            if(turno!=null&& turno is Denuncia)
-            {denuncia.Enqueue((Denuncia)turno);}
+            if (turno != null && turno is Denuncia)
+            { denuncia.Enqueue((Denuncia)turno); }
         }
 
         public void AtenderTicket(int tipo)
@@ -49,7 +62,7 @@ namespace Guia_13
                 ListaAtendidos.Add(t);
                 denuncia.Dequeue();
             }
-            
+
         }
     }
 }

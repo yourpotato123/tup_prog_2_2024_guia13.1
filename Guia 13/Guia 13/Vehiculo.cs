@@ -24,7 +24,7 @@ namespace Guia_13
         public override string ToString()
         {
             Cliente c = VerDueño(); string n = VerPatente();
-            return $"{c } - {n }";
+            return $" {n}";
         }
 
         public int CompareTo (Vehiculo obj)

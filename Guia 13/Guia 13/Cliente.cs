@@ -6,20 +6,23 @@ using System.Threading.Tasks;
 
 namespace Guia_13
 {
-    internal class Cliente:Ticket
+    internal class Cliente : Ticket
     {
-        long dni;
-        static int numero;
+        public long DNI { get;private set; }
+        private static int numero=1;
 
         public Cliente(long d)
         {
-            dni = d;
+            nroOrden = numero;
+            numero++;
+            DNI = d;
         }
+
 
         public override string ToString()
         {
-            long d = dni;
-            return base.ToString() + $" {d }";
+            long d = DNI;
+            return base.ToString() + $"- Cliente {d}";
         }
     }
 }

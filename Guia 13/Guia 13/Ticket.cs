@@ -6,26 +6,32 @@ using System.Threading.Tasks;
 
 namespace Guia_13
 {
-    abstract class Ticket:IComparable<Ticket>
+    abstract class Ticket : IComparable<Ticket>
     {
-        protected int nroOrden;
-        private DateTime fechaHora;
+        public int nroOrden { get; protected set; }
+        private DateTime fechaHora = DateTime.Now;
 
-        public int VerNro(){ return nroOrden;}
+        public int VerNro()
+        {
+            return nroOrden;
+        }
 
-        public DateTime VerFechaHora() { return fechaHora;}
+        public DateTime VerFechaHora()
+        {
+            return fechaHora;
+        }
 
         public override string ToString()
         {
-            int n = VerNro(); DateTime f = VerFechaHora();
-            return $"{n } - ";
+            int n = VerNro(); //DateTime f = VerFechaHora();
+            return $"Turno {n} - ";
         }
 
         //Opcional, no se para que usarlo pero se ve lindo
-        public int CompareTo (Ticket obj)
+        public int CompareTo(Ticket obj)
         {
             if (obj != null)
-            {return nroOrden.CompareTo(obj.nroOrden);}
+            { return nroOrden.CompareTo(obj.nroOrden); }
             return 1;
         }
 
