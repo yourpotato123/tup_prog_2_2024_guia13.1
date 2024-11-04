@@ -46,9 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Agencia.cs" />
-    <Compile Include="Cliente.cs" />
-    <Compile Include="Denuncia.cs" />
+    <Compile Include="Modals\Agencia.cs" />
+    <Compile Include="Modals\Cliente.cs" />
+    <Compile Include="Modals\Denuncia.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,8 +57,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Ticket.cs" />
-    <Compile Include="Vehiculo.cs" />
+    <Compile Include="Modals\Ticket.cs" />
+    <Compile Include="Modals\Vehiculo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
