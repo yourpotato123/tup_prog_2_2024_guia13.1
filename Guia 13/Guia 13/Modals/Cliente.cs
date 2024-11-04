@@ -9,11 +9,23 @@ namespace Guia_13
     [Serializable]
     internal class Cliente : Ticket
     {
-        public long DNI { get;private set; }
-        private static int numero=1;
+        private long dni;
+        public long DNI
+        {
+            get { return dni; }
+            private set
+            {
+                if (dni > 50000000)
+                {
+                    dni = value;
+                }
+            }
+        }
+        private static int numero = 1;
 
         public Cliente(long d)
         {
+            
             nroOrden = numero;
             numero++;
             DNI = d;

@@ -20,11 +20,11 @@ namespace Guia_13
 
         public Agencia()
         {
-            Cliente c = new Cliente(39256894);
+            Cliente c = new Cliente(59256894);
             Vehiculo v = new Vehiculo("ABC123", c);
             ListaVehiculo.Add(v);
 
-            c = new Cliente(38746582);
+            c = new Cliente(58746582);
             v = new Vehiculo("QWE789", c);
             ListaVehiculo.Add(v);
 
