@@ -38,13 +38,17 @@ namespace Comercio2
                 Pago pago = new Pago(cte);
                 c.AgregarTicket(pago);
                 listBox1.Items.Add(pago.ToString());
+                txCte.Clear();
             }
             else
             {
                 string dni = txtDNI.Text;
                 Cliente cli = new Cliente(dni);
                 listBox1.Items.Add(cli.ToString());
+                txtDNI.Clear();
             }
+
+            
 
         }
         private void btnAtenderCliente_Click(object sender, EventArgs e)
@@ -141,9 +145,14 @@ namespace Comercio2
             string ruta = Path.Combine(Application.StartupPath, "Datos.bin");
             if (File.Exists(ruta))
             {
-                archivo = new FileStream(ruta, FileMode.Open, FileAccess.Read);
-                c = (Comercio)bf.Deserialize(archivo);
-                archivo.Close();
+                FileInfo infoarchivo = new FileInfo(ruta);
+                if (infoarchivo.Length > 0)
+                {
+                    archivo = new FileStream(ruta, FileMode.Open, FileAccess.Read);
+                    c = (Comercio)bf.Deserialize(archivo);
+                    archivo.Close();
+                }
+                
             }
         }
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
