@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -77,7 +78,7 @@ namespace Comercio2
 
                 archivo = new FileStream(ruta, FileMode.Open, FileAccess.Write);
                 escritor = new StreamWriter(archivo);
-                
+
                 lineas = $"TipoTicket;numero;dni;ctaCte";
                 escritor.WriteLine(lineas);
 
@@ -86,7 +87,7 @@ namespace Comercio2
                 {
                     foreach (Ticket t in lista)//int indice = 0; indice < lista.Count(); indice++)
                     {
-                        lineas = t.CsvString();
+                        lineas = t.CsvString().Replace("-", ";").Trim();
                         escritor.WriteLine();
                     }
                 }
@@ -114,29 +115,52 @@ namespace Comercio2
                 while (!lector.EndOfStream)
                 {
                     linea = lector.ReadLine();
-                    linea = linea.Replace("-", "");
-                    datos = linea.Trim().Split(',');
+                    //linea = linea.Replace("-", "").Trim();
+                    datos = linea.Split(';');
 
                     int numero = Convert.ToInt32(datos[0]);
-                    int dni = Convert.ToInt32(datos[1]);
+                    string dni = datos[1];
                     double saldo = Convert.ToDouble(datos[2]);
 
                     CuentaCorriente cte = c[numero];
-                    //if(cte!=null)
 
-
+                    if (cte == null)
+                    {
+                        Cliente cliente = c.VerCliente(dni);
+                        cte = new CuentaCorriente(numero, cliente);
+                        c.AgregarCuenta(cte);
+                    }
+                    c[numero].RegistrarSaldo(saldo);
                 }
-                
-
-
             }
-
-
-
         }
 
-        
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            string ruta = Path.Combine(Application.StartupPath, "Datos.bin");
+            if (File.Exists(ruta))
+            {
+                archivo = new FileStream(ruta, FileMode.Open, FileAccess.Read);
+                c = (Comercio)bf.Deserialize(archivo);
+                archivo.Close();
+            }
+        }
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            string ruta = Path.Combine(Application.StartupPath, "Datos.bin");
 
-       
+            if (File.Exists(ruta))
+            {
+                archivo = new FileStream(ruta, FileMode.Open, FileAccess.Write);
+                bf.Serialize(archivo, c);
+            }
+            else
+            {
+                archivo = new FileStream(ruta, FileMode.Create, FileAccess.Write);
+            }
+            archivo.Close();
+        }
     }
 }
