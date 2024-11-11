@@ -40,9 +40,9 @@ namespace ComercioLib
             int d = dni; 
             return $"CLIENTE: {nro} - {fecha} - {d}";
         }
-        public override string CsvString()
+        public override string CsvString()          //METODO PARA IMPORTAR
         {
-            return $"CLIENTE: {VerNro()} - {DNI}";
+            return $"CLIENTE: {VerNro()} - {DNI}";  //POLIMORFISMO
         }
 
 

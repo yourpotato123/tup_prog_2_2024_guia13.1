@@ -77,5 +77,25 @@ namespace ComercioLib
             }
             return resultado;
         }
+        public Cliente VerCliente(string dni)
+        {
+            bool esta = false;
+            Cliente cliente = new Cliente (dni);
+            esta= nuevosClientes.Contains(cliente);
+            if(esta)
+            {
+                return cliente;
+            }
+            else
+            {
+                cliente = new Cliente(null);
+            }
+            return cliente;
+        }
+        public void AgregarCuenta(CuentaCorriente cte)
+        {
+            cuentasCorrientes.Add(cte);
+            cuentasCorrientes.Sort();
+        }
     }
 }

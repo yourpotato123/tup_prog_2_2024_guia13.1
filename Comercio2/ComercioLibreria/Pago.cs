@@ -26,9 +26,9 @@ namespace ComercioLib
             return $"PAGO: {nro} - {fecha} - {ficha.VerCliente()} - {ficha.VerNroCuenta()}";
         }
 
-        public override string CsvString()
-        {
-            return $"PAGO: {VerNro()} - {ficha.VerNroCuenta()}";
+        public override string CsvString()                          //METODO IMPORTAR
+        { 
+            return $"PAGO: {VerNro()} - {ficha.VerNroCuenta()}";    //POLIMORFISMO
         }
     }
 }

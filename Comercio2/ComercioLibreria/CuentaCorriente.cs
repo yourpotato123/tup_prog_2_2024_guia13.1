@@ -13,6 +13,11 @@ namespace ComercioLib
         private int nroCuenta;
         private Cliente titular;
         private double saldo;
+        public double Saldo
+        {
+            get { return saldo; }
+            set { saldo = value; }
+        }
 
         public CuentaCorriente(int nro, Cliente titular)
         {
@@ -30,6 +35,10 @@ namespace ComercioLib
         }
         public void RegistrarPago(double monto) { }
         public void RegistrarVenta(double monto) { }
+        public void RegistrarSaldo(double monto)
+        {
+            saldo = monto;
+        }
 
         public override string ToString()
         {
