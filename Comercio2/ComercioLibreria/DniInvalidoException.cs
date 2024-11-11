@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ComercioLib
 {
-    internal class DniInvalidoException : Exception
+    public class DniInvalidoException : Exception
     {
         public DniInvalidoException() { }
         public DniInvalidoException(string message) : base(message) { }
